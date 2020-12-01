@@ -6,9 +6,9 @@ Rails.application.routes.draw do
 
   resources :houses, only: [:new, :create, :show] do
     resources :tasks
+    resources :gifts, except: [:destroy, :index]
   end
 
   resources :profiles, only: [:show, :edit, :update]
-
 
 end

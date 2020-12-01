@@ -16,7 +16,12 @@ class HousesController < ApplicationController
   end
 
   def show
-    @house = House.find(params[:id])
+    if current_user.house.nil?
+      render "houses/new"
+    else
+      @user = current_user
+      @house = House.find(params[:id])
+    end
   end
 
   private

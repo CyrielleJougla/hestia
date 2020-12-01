@@ -4,6 +4,21 @@ class ProfilesController < ApplicationController
     @profile = Profile.find(params[:id])
   end
 
+  def new
+    @user = current_user
+    @profile = Profile.new
+  end
+
+  def create
+    @profile = Profile.new(profile_params)
+    @profile.user_id = current_user.id
+    if @profile.save
+      redirect_to profile_path(@profile)
+    else
+      render :new
+    end
+  end
+
   def edit
     @profile = Profile.find(params[:id])
   end
