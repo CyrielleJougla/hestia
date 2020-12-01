@@ -27,7 +27,6 @@ class ProfilesController < ApplicationController
     @profile = Profile.find(params[:id])
     @profile.update(profile_params)
     redirect_to "/dashboard"
-    raise
   end
 
   def destroy
