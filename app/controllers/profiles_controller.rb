@@ -19,6 +19,23 @@ class ProfilesController < ApplicationController
     end
   end
 
+  def edit
+    @profile = Profile.find(params[:id])
+  end
+
+  def update
+    @profile = Profile.find(params[:id])
+    @profile.update(profile_params)
+    redirect_to "/dashboard"
+    raise
+  end
+
+  def destroy
+    @profile = Profile.find(params[:id])
+    @profile.destroy
+    redirect_to root_path
+  end
+
   private
 
   def profile_params
