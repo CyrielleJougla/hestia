@@ -1,6 +1,13 @@
-<%= @profile.first_name %>
-<%= @profile.nickname %>
-<%= @profile.description %>
+<h1> Mon profil </h1>
 
-<%= link_to "Delete", profile_path(@profile), method: :delete, data: {confirm: "Are you sure?"} %>
-<%= link_to "Edit", edit_profile_path(@profile) %>
+<%= "Nom : #{@profile.first_name.capitalize}" %>
+<br> <%= "Surnom : #{@profile.nickname.capitalize}" %>
+<br> <%= "Description : #{@profile.description.capitalize}" %>
+
+<br> <%= link_to "Modifier", edit_profile_path(@profile) %>
+
+<br> <% if current_user.house %>
+  <%= "Ta house est : #{current_user.house.name}" %>
+<% else %>
+  <br> <%= link_to "Ajouter une house", new_house_path %>
+<% end %>

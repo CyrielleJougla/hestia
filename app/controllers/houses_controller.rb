@@ -1,4 +1,5 @@
 class HousesController < ApplicationController
+
   def new
     @user = current_user
     @house = House.new()
