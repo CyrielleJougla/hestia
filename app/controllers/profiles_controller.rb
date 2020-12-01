@@ -4,21 +4,6 @@ class ProfilesController < ApplicationController
     @profile = Profile.find(params[:id])
   end
 
-  def new
-    @user = current_user
-    @profile = Profile.new
-  end
-
-  def create
-    @profile = Profile.new(profile_params)
-    @profile.user = current_user
-    if @profile.save
-      redirect_to profile_path(@profile)
-    else
-      render :new
-    end
-  end
-
   def edit
     @profile = Profile.find(params[:id])
   end
@@ -26,13 +11,7 @@ class ProfilesController < ApplicationController
   def update
     @profile = Profile.find(params[:id])
     @profile.update(profile_params)
-    redirect_to "/dashboard"
-  end
-
-  def destroy
-    @profile = Profile.find(params[:id])
-    @profile.destroy
-    redirect_to root_path
+    redirect_to profile_path(@profile)
   end
 
   private

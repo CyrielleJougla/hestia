@@ -8,8 +8,7 @@ Rails.application.routes.draw do
     resources :task
   end
 
-  resources :profiles, except: [:index]
+  resources :profiles, only: [:show, :edit, :update]
 
-  get "/dashboard", to: "pages#dashboard"
 
 end
