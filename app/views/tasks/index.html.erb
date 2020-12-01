@@ -1,0 +1,5 @@
+<h1> toutes les taches </h1>
+
+<% @tasks.each do |task| %>
+  <%= link_to task.name.capitalize, task_path(task) %>
+<% end %>

@@ -1,0 +1,8 @@
+<h1> Ajouter une tache </h1>
+
+<%= simple_form_for @task do |f| %>
+  <%= f.input :name %>
+  <%= f.input :description %>
+  <%= f.input :points %>
+  <%= f.input :status %>
+<% end %>
