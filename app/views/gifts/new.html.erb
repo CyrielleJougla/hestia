@@ -1,6 +1,6 @@
 <h1> Choisissez votre récompense ! </h1>
 
-<%= simple_form_for @gift do |f| %>
+<%= simple_form_for [@house, @gift] do |f| %>
   <%= f.input :name, label:"Nom de la récompense :" %>
   <%= f.input :description, label:"Description :" %>
   <%= f.button :submit, "Valider" %>
