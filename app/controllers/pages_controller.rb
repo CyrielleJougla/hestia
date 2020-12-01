@@ -3,4 +3,12 @@ class PagesController < ApplicationController
 
   def home
   end
+
+  def dashboard
+    if current_user.profile
+      @profile = current_user.profile
+    else
+      @profile = Profile.create(user: current_user)
+    end
+  end
 end
