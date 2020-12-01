@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
-  get 'houses/index'
+  get 'houses/show'
   devise_for :users
-  root to: 'houses#index'
+  root to: 'houses#show'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
-  resources :house, only: [:index,:new, :create]
+  resources :houses, only: [:new, :create, :show]
 
   resources :profiles, except: [:index]
 
