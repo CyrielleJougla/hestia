@@ -8,6 +8,8 @@ Rails.application.routes.draw do
 
   resources :profiles, except: [:index]
 
+  resources :gifts, except: [:index, :destroy]
+
   get "/dashboard", to: "pages#dashboard"
 
 end
