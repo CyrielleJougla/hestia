@@ -6,6 +6,7 @@ class TasksController < ApplicationController
 
   def show
     @task = Task.find(params[:id])
+
   end
 
   def new
@@ -35,11 +36,11 @@ class TasksController < ApplicationController
     redirect_to house_path(@task.house)
   end
 
-  # def destroy
-  #   @task = Task.find(params[:id])
-  #   @task.destroy
-  #   redirect_to tasks_path
-  # end
+  def destroy
+    @task = Task.find(params[:id])
+    @task.destroy
+    redirect_to house_path(@task.house)
+  end
 
   private
 
