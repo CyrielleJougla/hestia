@@ -30,16 +30,9 @@
           <li class="nav-item">
             <%= link_to "Add task", new_house_task_path(current_user.house), class: "nav-link" %>
           </li>
-
           <li class="nav-item">
-            <%# if @house.gifts.nil? %>
-              <%# link_to "gift", new_house_gift_path(@house) %>
-            <%# else %>
-              <%= link_to "Gift", "#" , class: "nav-link" %>
-            <%# end %>
+            <%= link_to "Gift", gift_path(current_user.house.gift) , class: "nav-link" %>
           </li>
-
-
           <li class="nav-item">
             <%= link_to "Chat", "#" , class: "nav-link" %>
           </li>

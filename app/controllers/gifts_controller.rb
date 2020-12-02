@@ -16,8 +16,15 @@ class GiftsController < ApplicationController
   end
 
   def show
-    @house = current_user.house
-    @gift = Gift.find(params[:id])
+    # @house = current_user.house
+    # @gift = Gift.find(params[:id])
+
+    if current_user.house.gift.nil?
+      render :new
+    else
+      @house = current_user.house
+      @gift = Gift.find(params[:id])
+    end
   end
 
   def edit
