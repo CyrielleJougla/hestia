@@ -12,9 +12,17 @@
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
         <li class="nav-item active">
-          <%= link_to "Home", "#" , class: "nav-link" %>
+          <%= link_to "Home", house_path(current_user.house) , class: "nav-link" %>
         </li>
-
+        <li class="nav-item">
+          <%= link_to "Add task", new_house_task_path(current_user.house) , class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Gift", "#" , class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Chat", "#" , class: "nav-link" %>
+        </li>
         <li class="nav-item dropdown">
           <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
