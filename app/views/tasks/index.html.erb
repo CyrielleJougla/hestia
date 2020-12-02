@@ -1,7 +1,0 @@
-<h1> toutes les taches </h1>
-
-<% @tasks.each do |task| %>
-  <%# link_to task.name.capitalize, house_task_path(task) %>
-    <%= task.name.capitalize %>
-    <%= link_to "modifier", edit_house_task_path(@house) %>
-<% end %>

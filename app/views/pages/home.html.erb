@@ -1,0 +1,7 @@
+<% if current_user.house %>
+  <p> vOUS AVEZ UNE MAISON </p>
+  <%= link_to "Aller à votre maison", house_path(current_user.house) %>
+<% else %>
+  <%= link_to "ajouter une house", new_house_path %>
+  <%# link_to "rejoindre" %>
+<% end %>
