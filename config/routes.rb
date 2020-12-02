@@ -10,9 +10,8 @@ Rails.application.routes.draw do
     resources :habitants, only: [:new, :create]
   end
 
-
-  resources :tasks, except: [:new, :create]
-  resources :gifts, except: [:new, :create, :index, :destroy]
+  resources :gifts, only: [:show, :edit, :update]
+  resources :tasks, only: [:show, :edit, :update, :destroy]
   resources :profiles, only: [:show, :new, :create, :edit, :update]
 
 end

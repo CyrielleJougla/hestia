@@ -8,14 +8,15 @@ class GiftsController < ApplicationController
     @gift = Gift.new(gift_params)
     @house = current_user.house
     @gift.house = @house
-    if @gift.save
-      redirect_to house_gift_path
+    if @gift.save!
+      redirect_to gift_path(@gift)
     else
       render :new
     end
   end
 
   def show
+    @house = current_user.house
     @gift = Gift.find(params[:id])
   end
 
