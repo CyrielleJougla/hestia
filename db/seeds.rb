@@ -5,6 +5,14 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+User.destroy_all if Rails.env.development?
+Profile.destroy_all if Rails.env.development?
+House.destroy_all if Rails.env.development?
+Habitant.destroy_all if Rails.env.development?
+Gift.destroy_all if Rails.env.development?
+Task.destroy_all if Rails.env.development?
+# Chatroom.destroy_all if Rails.env.development?
+# Message.destroy_all if Rails.env.development?
 
 user1 = User.create!(email:"bob@gmail.com", password:"Hestia2020")
 user2 = User.create!(email:"kim@gmail.com", password:"Hestia2020")
