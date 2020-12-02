@@ -10,7 +10,6 @@ Rails.application.routes.draw do
     resources :habitants, only: [:new, :create]
   end
 
-
   resources :tasks, only: [:edit, :update]
   resources :profiles, only: [:show, :new, :create, :edit, :update]
 
