@@ -18,7 +18,7 @@ class TasksController < ApplicationController
     @house = current_user.house
     @task.house = @house
     if @task.save
-      redirect_to root_path
+      redirect_to house_path(@house)
     else
       render :new
     end
@@ -26,12 +26,13 @@ class TasksController < ApplicationController
 
   def edit
     @task = Task.find(params[:id])
+    @house = @task.house
   end
 
   def update
     @task = Task.find(params[:id])
     @task.update(task_params)
-    redirect_to task_path(@task)
+    redirect_to house_path(@task.house)
   end
 
   # def destroy

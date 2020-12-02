@@ -1,6 +1,6 @@
 <h1> Modifier une tache </h1>
 
-<%= simple_form_for [@house, @task] do |f| %>
+<%= simple_form_for @task do |f| %>
   <%= f.input :name, label:"Nom : " %>
   <%= f.input :points, label: "Points" %>
   <%= f.input :description, label:"Description : " %>

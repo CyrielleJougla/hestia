@@ -1,4 +1,12 @@
 class PagesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [ :home ]
+
+
+  def home
+    if current_user.habitant
+      @house = current_user.habitant.house
+    end
+  end
 
 end
+
+
