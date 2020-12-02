@@ -7,9 +7,7 @@
 <ul>
   <% @tasks.each do |task| %>
     <li>
-      
-    <%# link_to task.name.capitalize, house_task_path(task) %>
-    <%= task.name.capitalize %>
+    <%= link_to task.name.capitalize, task_path(task) %>
     <%= task.points %> points
     <%= link_to "Modifier", edit_task_path(task) %>
     <%= link_to "Supprimer", task_path(task), method: :delete, data: {confirm: "are you sure?"}  %>
@@ -17,4 +15,4 @@
   <% end %>
 </ul>
 
-<%= link_to "ajouter tache", new_house_task_path(@house) %>
+<%# link_to "ajouter tache", new_house_task_path(@house) %>
