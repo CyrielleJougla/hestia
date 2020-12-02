@@ -9,6 +9,5 @@ Rails.application.routes.draw do
     resources :gifts, except: [:destroy, :index]
   end
 
-  resources :profiles, only: [:show, :edit, :update]
-
+  resources :profiles, only: [:show, :new, :create, :edit, :update]
 end

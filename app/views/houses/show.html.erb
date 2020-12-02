@@ -1,16 +1,29 @@
 
 
-
-<%= link_to "icone cadeau", new_house_task_path(@house) %>
-
+<p>
+  <%= "@house.gift.name" %>
+  <%= link_to "icone cadeau", new_house_task_path(@house) %>
+</p>
 <h1>Houses#show</h1>
+<h2> Hello
+    <% if @user.profile.nil? %>
+      <%= "Hello Papy" %>
+    <% else %>
+      <%= @user.profile.nickname %>
+    <% end %>
+! </h2>
 
-<h2> Hello <%= @user.profile.nickname %> ! (mettre name après avoir créé la table profil)</h2>
+
 <p> Name : <%= @house.name %> </p>
 <p> Id : <%= @house.id %> </p>
 <p> Membres : <%= @house.user.email %> </p>
 <h2> Liste des tâches </h2>
-<ul>
-  <li> (partir d'un Tasks.all avec un each pour avoir la liste des tâches pour une house) </li>
+<ul>(partir d'un Tasks.all avec un each pour avoir la liste des tâches pour une house)
+  <% @house.tasks.each do |task| %>
+  <li>
+    <%= task.name %>
+  </li>
+  <% end %>
 </ul>
+
 
