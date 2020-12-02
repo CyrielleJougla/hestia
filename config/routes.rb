@@ -6,11 +6,11 @@ Rails.application.routes.draw do
 
   resources :houses, only: [:new, :create, :show] do
     resources :tasks, except: [:edit, :update]
-    resources :gifts, except: [:destroy, :index]
+    resources :gifts, except: [:destroy, :index, :show]
     resources :habitants, only: [:new, :create]
   end
 
-
+  resources :gifts, only: [:show]
   resources :tasks, only: [:edit, :update]
   resources :profiles, only: [:show, :new, :create, :edit, :update]
 
