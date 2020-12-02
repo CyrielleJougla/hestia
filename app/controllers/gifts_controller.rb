@@ -20,6 +20,17 @@ class GiftsController < ApplicationController
     @gift = Gift.find(params[:id])
   end
 
+  def edit
+    @gift = Gift.find(params[:id])
+    @house = @gift.house
+  end
+
+  def update
+    @gift = Gift.find(params[:id])
+    @gift.update(gift_params)
+    redirect_to gift_path(@gift)
+  end
+
   def gift_params
     params.require(:gift).permit(:name, :house_id, :description)
   end

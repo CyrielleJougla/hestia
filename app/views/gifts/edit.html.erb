@@ -1,0 +1,6 @@
+<h1> edit gift</h1>
+<%= simple_form_for @gift do |f| %>
+  <%= f.input :name, label:"Nom : " %>
+  <%= f.input :description, label:"Description : " %>
+  <%= f.button :submit %>
+<% end %>
