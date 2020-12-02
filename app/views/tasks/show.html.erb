@@ -1,3 +1,6 @@
-<h1> <%= @task.name %> </h1>
-<%= "Description : #{@task.description}" %>
+<h1> <%= @task.name.capitalize %> </h1>
+<%= "#{@task.points} points" %>
+<br> <%= "Détails : #{@task.description.capitalize}" %>
 
+<br> <%= link_to "✏️", edit_task_path(@task) %>
+<%= link_to "🗑", task_path(@task), method: :delete, data: {confirm: "are you sure?"} %>
