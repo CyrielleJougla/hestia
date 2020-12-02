@@ -12,6 +12,7 @@ Rails.application.routes.draw do
 
   resources :gifts, only: [:show]
   resources :tasks, only: [:edit, :update]
+
   resources :profiles, only: [:show, :new, :create, :edit, :update]
 
 end
