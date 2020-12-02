@@ -2,12 +2,9 @@
   <%= link_to "#", class: "navbar-brand" do %>
     <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %>
     <% end %>
-
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-
-
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
 
@@ -23,6 +20,7 @@
           </div>
         </li>
 
+
         <% if current_user.house %>
 
           <li class="nav-item active">
@@ -33,9 +31,12 @@
             <%= link_to "Add task", new_house_task_path(current_user.house), class: "nav-link" %>
           </li>
 
-
           <li class="nav-item">
-            <%= link_to "Gift", gift_path(current_user.house.gifts) , class: "nav-link" %>
+            <% if @house.gifts.nil? %>
+              <%= link_to "gift", new_house_gift_path(@house) %>
+            <% else %>
+              <%= link_to "Gift", "#" , class: "nav-link" %>
+            <% end %>
           </li>
 
 
