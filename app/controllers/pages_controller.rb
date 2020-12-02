@@ -1,10 +1,7 @@
 class PagesController < ApplicationController
 
-
   def home
-    if current_user.habitant
-      @house = current_user.habitant.house
-    end
+    redirect_to house_path(current_user.house) if current_user.house
   end
 
 end
