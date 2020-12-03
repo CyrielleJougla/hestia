@@ -1,7 +1,12 @@
 <div class="container1">
-  <h1> EN JEU CETTE SEMAINE </h1>
-  <h2> <%= @gift.name.capitalize %> </h2>
-  <p> <%= @gift.description.capitalize %> </p>
+  <h1> <br> EN JEU CETTE SEMAINE </h1>
+    <h2>
+      "<%= @gift.name.capitalize %>"
+    </h2>
+
+    <p>
+      <%= @gift.description.capitalize %>
+     </p>
 
     <div class="card-square">
       <%= image_tag "gift-box.png", style: "height:200px; width:200px;"%>

@@ -1,4 +1,9 @@
 // Dégradé clair à foncé
+.big-container{
+  width: 400px;
+  margin: auto;
+}
+
 .container1 {
   width: 400px;
   height: 700px;
@@ -15,6 +20,10 @@
   margin: auto;
   background-image : linear-gradient(170deg, #7980E9 30%, #B1F0F9 85%);
   text-align: center;
+}
+
+.navbar{
+  width: 400px;
 }
 
 
