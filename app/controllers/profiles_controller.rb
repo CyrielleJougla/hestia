@@ -2,7 +2,7 @@ class ProfilesController < ApplicationController
 
   def show
     if current_user.profile
-      @profile = Profile.find(params[:id])
+      @profile = Profile.find_by(user_id: params[:id])
     else
       redirect_to new_profile_path
     end
@@ -28,7 +28,7 @@ class ProfilesController < ApplicationController
   end
 
   def update
-    @profile = Profile.find(params[:id])
+    @profile = Profile.find_by(user_id: params[:id])
     @profile.update(profile_params)
     redirect_to profile_path(@profile)
   end
@@ -36,7 +36,7 @@ class ProfilesController < ApplicationController
   private
 
   def profile_params
-    params.require(:profile).permit(:first_name, :nickname, :description, :picture, :user_id)
+    params.require(:profile).permit(:first_name, :nickname, :description, :picture, :user_id, :score)
   end
 
 end

@@ -1,0 +1,8 @@
+<%= simple_form_for(profile) do |f| %>
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  <%= f.input :first_name %>
+  <%= f.input :nickname %>
+  <%= f.input :description %>
+  <%= f.input :picture, as: :file, label:"Balance ta tronche !" %>
+  <%= f.submit %>
+<% end %>
