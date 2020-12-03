@@ -28,7 +28,23 @@ class TasksController < ApplicationController
   def update
     @task = Task.find(params[:id])
     @task.update(task_params)
-    redirect_to house_path(@task.house)
+    if @task.status
+      @task.user = current_user
+      if current_user.profile.score == nil
+        current_user.profile.score = @task.points
+      else
+      current_user.profile.score += @task.points
+      end
+      current_user.profile.save
+    else
+      task_owner = @task.user
+      task_owner.profile.score -= @task.points
+      task_owner.profile.save
+      @task.user = nil
+    end
+     @task.save
+
+      redirect_to house_path(@task.house)
   end
 
   def destroy

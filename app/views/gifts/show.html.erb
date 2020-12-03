@@ -1,7 +1,12 @@
-<h1> EN JEU CETTE SEMAINE </h1>
+<div class="container1">
+  <h1> EN JEU CETTE SEMAINE </h1>
+  <h2> <%= @gift.name.capitalize %> </h2>
+  <p> <%= @gift.description.capitalize %> </p>
 
-<h2> <%= @gift.name.capitalize %> </h2>
-<p>  <%= @gift.description.capitalize %> </p>
-<%= link_to "edit", edit_gift_path %>
+    <div class="card-square">
+      <%= image_tag "gift-box.png", style: "height:200px; width:200px;"%>
+    </div>
 
+  <%= link_to "Modifier", edit_gift_path, class:"button-edit" %>
+</div>
 

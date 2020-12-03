@@ -22,6 +22,7 @@ class HousesController < ApplicationController
     @user = current_user
     @house = House.find(params[:id])
     @tasks = @house.tasks
+    console
   end
 
   private

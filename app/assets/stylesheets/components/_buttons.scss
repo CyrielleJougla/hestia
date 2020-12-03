@@ -1,0 +1,40 @@
+.button-name{
+  border-radius: 50px;
+  background-color: #FFF;
+  opacity: 70%;
+  display: block;
+  width: 300px;
+  height: 60px;
+  margin: auto;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  padding: 16px 48px;
+  text-align: center;
+}
+
+.button-edit{
+  display: block;
+  width: 120px;
+  height: 60px;
+  margin: auto;
+  color: #9DC0F5;
+  padding: 20px 24px;
+  border-radius: 4px;
+  background: #FFF;
+  opacity: 70%;
+  text-decoration: none !important;
+  font-weight: lighter!important;
+  text-align: center;
+  letter-spacing: 1.5px;
+  font-size: 17px;
+}
+
+.button-edit:hover{
+  text-decoration: none;
+  color: #777DE8;
+}
+
+
+.button-delete{
+
+}
