@@ -1,3 +1,7 @@
+<% if current_user.profile.nil? %>
+  <p> Va renseigner ton profil en premier !  </p>
+<% end %>
+
 <% if current_user.house.nil? %>
   <%= link_to "ajouter une house", new_house_path %>
 <% end %>
