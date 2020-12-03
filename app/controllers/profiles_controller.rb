@@ -2,7 +2,7 @@ class ProfilesController < ApplicationController
 
   def show
     if current_user.profile
-      @profile = Profile.find(params[:id])
+      @profile = Profile.find_by(user_id: params[:id])
     else
       redirect_to new_profile_path
     end

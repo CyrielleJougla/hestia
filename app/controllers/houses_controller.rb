@@ -2,12 +2,16 @@ class HousesController < ApplicationController
 
   def new
     @user = current_user
-    @house = House.new
+    #if current_user.house.nil?
+      @house = House.new
+    #end
   end
 
   def create
-    @house = House.new(house_params)
-    @house.user = current_user
+    #if current_user.house.nil?
+      @house = House.new(house_params)
+      @house.user = current_user
+    #end
     if @house.save
       Habitant.create(house: @house, user: current_user )
       redirect_to house_path(@house)
@@ -17,15 +21,10 @@ class HousesController < ApplicationController
   end
 
   def show
-    if current_user.house.nil?
-      render :new
-    else
-      @user = current_user
-      @house = House.find(params[:id])
-    end
-    @home = current_user.house.id
+    @habitant = Habitant.find_by(user_id: current_user.id)
+    render :new if @habitant.house.nil?
     @user = current_user
-    @house = House.find(@home)
+    @house = House.find(params[:id])
     @tasks = @house.tasks
 
   end
