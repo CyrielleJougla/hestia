@@ -1,5 +1,10 @@
 <h1> Mon profil </h1>
 
+<% if @profile.picture.attached? %>
+  <%= cl_image_tag( @profile.picture.key,
+      width: 150, height: 150, crop: :thumb, gravity: :face) %>
+<% end %>
+
 <%= "Nom : #{@profile.first_name.capitalize}" %>
 <br> <%= "Surnom : #{@profile.nickname.capitalize}" %>
 <br> <%= "Description : #{@profile.description.capitalize}" %>
