@@ -1,7 +1,7 @@
-<h1> Rejoindre une maison déjà existante </h1>
-
-<%= simple_form_for [@house, @habitant] do |f| %>
-  <%= f.button :submit, "Cliquez ici pour rejoindre" %>
+<% if current_user.profile.nil? %>
+  <p> Va renseigner ton profil en premier !  </p>
 <% end %>
+
+
 
 

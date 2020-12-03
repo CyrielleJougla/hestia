@@ -1,12 +1,12 @@
 class GiftsController < ApplicationController
   def new
-    @house = current_user.house
+    @house = current_user.habitant.house
     @gift = Gift.new
   end
 
   def create
     @gift = Gift.new(gift_params)
-    @house = current_user.house
+    @house = current_user.habitant.house
     @gift.house = @house
     if @gift.save!
       redirect_to gift_path(@gift)
@@ -16,13 +16,13 @@ class GiftsController < ApplicationController
   end
 
   def show
-    # @house = current_user.house
+    # @house = current_user.habitant.house
     # @gift = Gift.find(params[:id])
 
-    if current_user.house.gift.nil?
+    if current_user.habitant.house.gift.nil?
       render :new
     else
-      @house = current_user.house
+      @house = current_user.habitant.house
       @gift = Gift.find(params[:id])
     end
   end
