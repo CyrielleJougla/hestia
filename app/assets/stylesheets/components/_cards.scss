@@ -1,0 +1,59 @@
+// Dégradé clair à foncé
+.container1 {
+  width: 400px;
+  height: 700px;
+  color: white;
+  margin: auto;
+  background-image : linear-gradient(170deg, #B1F0F9 50%, #7980E9 75%);
+  text-align: center;
+}
+
+// Dégradé foncé à clair
+.container2 {
+  width: 400px;
+  height: 700px;
+  margin: auto;
+  background-image : linear-gradient(170deg, #7980E9 30%, #B1F0F9 85%);
+  text-align: center;
+}
+
+
+.card-square {
+  margin: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 300px;
+  height: 300px;
+  background-color: rgba(250,250,250,0.5);
+  border-radius: 24px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,.1);
+  text-align: center;
+  padding: 10%;
+}
+
+.card-square-lighter {
+  margin: auto;
+  width: 300px;
+  height: 300px;
+  background-color: rgba(250,250,250,0.4);
+  border-radius: 24px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,.1);
+}
+
+.card-semi-rounded {
+  margin: auto;
+  margin-bottom: 20px;
+  width: 300px;
+  height: 130px;
+  background-color: #FFF;
+  opacity: 70%;
+  border-bottom-right-radius: 90px;
+  border-bottom-left-radius: 90px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,.1);
+  text-align: center;
+}
+
+#gift-image{
+  opacity:100%;
+}
+
