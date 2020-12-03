@@ -5,13 +5,13 @@ class TasksController < ApplicationController
   end
 
   def new
-    @house = current_user.house
+    @house = current_user.habitant.house
     @task = Task.new
   end
 
   def create
     @task = Task.new(task_params)
-    @house = current_user.house
+    @house = current_user.habitant.house
     @task.house = @house
     if @task.save
       redirect_to house_path(@house)

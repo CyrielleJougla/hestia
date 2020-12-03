@@ -6,7 +6,7 @@ class HabitantsController < ApplicationController
   end
 
   def create
-    @house = House.find(params[:house_id])
+    @house = House.find(params[:habitant][:house])
     @habitant = Habitant.new(house: @house, user: current_user)
     if @habitant.save
       redirect_to house_path(@house)

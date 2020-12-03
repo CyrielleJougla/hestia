@@ -1,9 +1,15 @@
-<h2> Hello </h2>
-<p> Name de la house : <%= @house.name %> </p>
-<p> Id de la house : <%= @house.id %> </p>
-<p> Membres de la house : <%= @house.user.email %> </p>
+<h2> <%= "Hello #{current_user.profile.first_name.capitalize}"  %></h2>
+
+<p> Membres de la house : </p>
+  <ul>
+    <% @house.habitants.each do |habitant| %>
+      <li> <%= habitant.user.profile.first_name %> </li>
+    <% end %>
+  </ul>
+
 <h2> SCORE current_user : <%= current_user.profile.score %> </h2>
-<h2> Score de la house : </h2>
+
+<h2> Score des membres de la house : </h2>
   <ul>
     <% @house.habitants.each do |habitant| %>
       <li> <%= habitant.user.profile.nickname %> <%= habitant.user.profile.score %> </li>
@@ -19,3 +25,5 @@
   </li>
   <% end %>
 </ul>
+
+

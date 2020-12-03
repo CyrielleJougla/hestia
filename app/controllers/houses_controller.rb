@@ -2,16 +2,12 @@ class HousesController < ApplicationController
 
   def new
     @user = current_user
-    #if current_user.house.nil?
-      @house = House.new
-    #end
+    @house = House.new
   end
 
   def create
-    #if current_user.house.nil?
-      @house = House.new(house_params)
-      @house.user = current_user
-    #end
+    @house = House.new(house_params)
+    @house.user = current_user
     if @house.save
       Habitant.create(house: @house, user: current_user )
       redirect_to house_path(@house)
