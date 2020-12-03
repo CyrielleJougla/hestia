@@ -4,4 +4,5 @@ class House < ApplicationRecord
   has_many :tasks, dependent: :destroy
   has_one :gift, dependent: :destroy
   has_one :chatroom
+  validates :name, uniqueness: true
 end

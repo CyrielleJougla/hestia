@@ -6,6 +6,7 @@ class ProfilesController < ApplicationController
     else
       redirect_to new_profile_path
     end
+    @habitant = Habitant.new
   end
 
   def new
@@ -28,7 +29,7 @@ class ProfilesController < ApplicationController
   end
 
   def update
-    @profile = Profile.find_by(user_id: params[:id])
+    @profile = Profile.find(params[:id])
     @profile.update(profile_params)
     redirect_to profile_path(@profile)
   end

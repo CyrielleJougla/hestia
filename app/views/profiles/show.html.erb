@@ -1,21 +1,26 @@
 <h1> Mon profil </h1>
 
 <%# if @profile.picture.attached? %>
-  <%# cl_image_tag( @profile.picture.key,
-      width: 150, height: 150, crop: :thumb, gravity: :face) %>
-<%# end %>
+  <%# cl_image_tag @profile.picture.key,
+      width: 150, height: 150, crop: :thumb, gravity: :face %>
+<%#end %>
 
-<%= "Nom : #{current_user.profile.first_name.capitalize}" %>
-<br> <%= "Surnom : #{current_user.profile.nickname.capitalize}" %>
-<br> <%= "Description : #{current_user.profile.description.capitalize}" %>
+<%= "Nom : #{current_user.profile.first_name.capitalize}" %> <br>
+<%= "Surnom : #{current_user.profile.nickname.capitalize}" %> <br>
+<%= "Description : #{current_user.profile.description.capitalize}" %> <br>
 
-<br> <%= link_to "Modifier", edit_profile_path(current_user.profile) %>
+<%= link_to "Modifier", edit_profile_path(current_user.profile) %> <br> <br>
 
-<br> <% if current_user.habitant %>
-  <%= "Ta house est : #{current_user.habitant.house.name}" %>
-  <p> Lien à donner pour inviter des gens à rejoindre ta house : </p>
-  <%= "http://localhost:3000/houses/#{@current_user.habitant.house.id}/habitants/new" %>
+<% if current_user.habitant %>
+  <%= "Ta house est : #{current_user.habitant.house.name}" %> <br><br>
 <% else %>
-  <br> <%= link_to "Ajouter une house", new_house_path %>
+  <%= link_to "Créer une house", new_house_path %>
+  <p> Rejoindre une house </p>
+  <%= simple_form_for @habitant do |f| %>
+    <%= f.input :house, collection: House.all %>
+    <%= f.button :submit, "Rejoindre cette maison" %>
+  <% end %>
 <% end %>
 
+
+<%# "https://projet-hestia.herokuapp.com/houses/#{@current_user.habitant.house.id}/habitants/new" %> <br><br>

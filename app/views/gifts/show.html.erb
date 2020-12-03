@@ -1,11 +1,7 @@
 <h1> EN JEU CETTE SEMAINE </h1>
 
-<h2> Nom :
-  <%= @gift.name.capitalize %>
-  <%= link_to "edit", edit_gift_path %>
-</h2>
-<p>Description :
-  <%= @gift.description.capitalize %>
-</p>
+<h2> <%= @gift.name.capitalize %> </h2>
+<p>  <%= @gift.description.capitalize %> </p>
+<%= link_to "edit", edit_gift_path %>
 
 
