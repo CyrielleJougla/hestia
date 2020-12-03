@@ -3,6 +3,9 @@
 <% if current_user.profile.picture.attached? %>
   <%= cl_image_tag current_user.profile.picture.key,
       width: 150, height: 150, crop: :thumb, gravity: :face %>
+  <% else %>
+  <%= cl_image_tag "https://res.cloudinary.com/drnblm552/image/upload/v1607017224/defaut_avatar_svlhcb.jpg",
+      width: 150, height: 150, crop: :thumb, gravity: :face %>
 <% end %>
 
 <%= "Nom : #{current_user.profile.first_name.capitalize}" %> <br>
