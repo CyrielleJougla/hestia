@@ -21,24 +21,28 @@
         </li>
 
 
-        <% if current_user.habitant.house %>
+        <% if current_user.habitant %>
 
           <li class="nav-item active">
-          <%= link_to "Home", house_path(current_user.habitant.house), class: "nav-link" %>
+          <%= link_to "🏠", house_path(current_user.habitant.house), class: "nav-link" %>
           </li>
 
           <li class="nav-item">
-            <%= link_to "Add task", new_house_task_path(current_user.habitant.house), class: "nav-link" %>
+            <%= link_to "➕", new_house_task_path(current_user.habitant.house), class: "nav-link" %>
           </li>
 
           <li class="nav-item">
-            <%= link_to "Chat", "#" , class: "nav-link" %>
+            <%= link_to "💬", "#" , class: "nav-link" %>
           </li>
 
           <% if current_user.habitant.house.gift %>
 
             <li class="nav-item">
-              <%= link_to "Gift", gift_path(current_user.habitant.house.gift) , class: "nav-link" %>
+              <%= link_to "🎁", gift_path(current_user.habitant.house.gift) , class: "nav-link" %>
+            </li>
+          <% else %>
+            <li class="nav-item">
+              <%= link_to "🎁", new_house_gift_path(current_user.habitant.house) , class: "nav-link" %>
             </li>
           <% end %>
 
