@@ -11,8 +11,11 @@
 
 <br> <%= link_to "Modifier", edit_profile_path(@profile) %>
 
-<br> <% if current_user.house %>
-  <%= "Ta house est : #{current_user.house.name}" %>
+<br> <% if current_user.habitant.house %>
+  <%= "Ta house est : #{current_user.habitant.house.name}" %>
+  <p> Lien à donner pour inviter des gens à rejoindre ta house : </p>
+  <%= "http://localhost:3000/houses/#{@current_user.habitant.house.id}/habitants/new" %>
 <% else %>
   <br> <%= link_to "Ajouter une house", new_house_path %>
 <% end %>
+

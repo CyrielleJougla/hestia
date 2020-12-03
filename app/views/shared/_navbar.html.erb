@@ -21,14 +21,14 @@
         </li>
 
 
-        <% if current_user.house %>
+        <% if current_user.habitant.house %>
 
           <li class="nav-item active">
-          <%= link_to "Home", house_path(current_user.house), class: "nav-link" %>
+          <%= link_to "Home", house_path(current_user.habitant.house), class: "nav-link" %>
           </li>
 
           <li class="nav-item">
-            <%= link_to "Add task", new_house_task_path(current_user.house), class: "nav-link" %>
+            <%= link_to "Add task", new_house_task_path(current_user.habitant.house), class: "nav-link" %>
           </li>
           <li class="nav-item">
             <%= link_to "Gift", gift_path(current_user.house.gift) , class: "nav-link" %>
