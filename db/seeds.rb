@@ -35,7 +35,7 @@ habitant2 = Habitant.create!(house:house1, user:user2)
 
 Gift.create!(name:"Petit restau", description:"Un restau pour deux du choix du vaincqueur", house:house1)
 
-task1 = Task.create!(user:user1, house:house1, name:"Faire le lit", description:"Faire le lit au carré, pas juste ramener la couette pour faire genre", points:5, status:false)
+task1 = Task.create!(user:user1, house:house1, name:"Faire le lit", description:"Ne pas juste ramener la couette pour faire genre", points:5, status:false)
 task2 = Task.create!(user:user2, house:house1, name:"Passer l'aspi", description:"Passer l'aspirateur dans toutes les pièces", points:15, status:false)
 task3 = Task.create!(user:user1, house:house1, name:"Faire le repassage", description:"Faire le repassage", points:30, status:false)
 task4 = Task.create!(user:user2, house:house1, name:"Sortir les poubelles", description:"Sortir les poubelles (avant qu'elles puent)", points:10, status:false)
