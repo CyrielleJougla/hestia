@@ -1,6 +1,11 @@
 <h2> <%= "Hello #{current_user.profile.first_name.capitalize}"  %></h2>
-<%= cl_image_tag current_user.profile.picture.key,
-          width: 100, height: 100, crop: :thumb, gravity: :face %>
+<% if current_user.profile.picture.attached? %>
+  <%= cl_image_tag current_user.profile.picture.key,
+    width: 100, height: 100, crop: :thumb, gravity: :face %>
+<% else  %>
+  <%= cl_image_tag "https://res.cloudinary.com/drnblm552/image/upload/v1607017224/defaut_avatar_svlhcb.jpg",
+      width: 100, height: 100, crop: :thumb, gravity: :face %>
+<% end  %>
 
 <p> Membres de la house : </p>
   <ul>
@@ -15,8 +20,13 @@
   <ul>
     <% @house.habitants.each do |habitant| %>
       <li>
-        <%= cl_image_tag habitant.user.profile.picture.key,
-          width: 50, height: 50, crop: :thumb, gravity: :face %>
+        <% if current_user.profile.picture.attached? %>
+          <%= cl_image_tag current_user.profile.picture.key,
+            width: 100, height: 100, crop: :thumb, gravity: :face %>
+        <% else  %>
+          <%= cl_image_tag "https://res.cloudinary.com/drnblm552/image/upload/v1607017224/defaut_avatar_svlhcb.jpg",
+              width: 100, height: 100, crop: :thumb, gravity: :face %>
+        <% end  %>
         <%= habitant.user.profile.nickname %>
         <%= habitant.user.profile.score %>
       </li>
@@ -32,5 +42,3 @@
   </li>
   <% end %>
 </ul>
-
-
