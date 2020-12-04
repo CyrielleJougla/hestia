@@ -1,5 +1,6 @@
-<h1> Mon profil </h1>
+<br> <h1> Mon profil </h1>
 
+<br>
 <% if current_user.profile.picture.attached? %>
   <%= cl_image_tag current_user.profile.picture.key,
       width: 150, height: 150, crop: :thumb, gravity: :face %>
@@ -8,20 +9,20 @@
       width: 150, height: 150, crop: :thumb, gravity: :face %>
 <% end %>
 
-<%= "Nom : #{current_user.profile.first_name.capitalize}" %> <br>
-<%= "Surnom : #{current_user.profile.nickname.capitalize}" %> <br>
-<%= "Description : #{current_user.profile.description.capitalize}" %> <br>
+<br> <br> <div class="pink"> <%= "#{current_user.profile.first_name.capitalize}" %> </div>
+<%= "alias #{current_user.profile.nickname.capitalize}" %> <br>
+<%= " #{current_user.profile.description.capitalize}" %> <br>
 
-<%= link_to "Modifier", edit_profile_path(current_user.profile) %> <br> <br>
+<%= link_to "Modifier", edit_profile_path(current_user.profile), class:"button-edit" %> <br>
 
 <% if current_user.habitant %>
-  <%= "Ta house est : #{current_user.habitant.house.name}" %> <br><br>
+  <p> <%= "Ton foyer virtuel est : #{current_user.habitant.house.name}" %> </p> <br><br>
 <% else %>
-  <%= link_to "Créer une house", new_house_path %>
-  <p> Rejoindre une house </p>
+  <p> <%= link_to "Créer un foyer virtuel", new_house_path, class:"white" %> </p>
+  <p> Rejoindre un foyer firtuel existant </p>
   <%= simple_form_for @habitant do |f| %>
-    <%= f.input :house, collection: House.all %>
-    <%= f.button :submit, "Rejoindre cette maison" %>
+    <%= f.input :house, label: "Foyer virtuel", collection: House.all %>
+    <%= f.button :submit, "Rejoindre ce foyer" %>
   <% end %>
 <% end %>
 
