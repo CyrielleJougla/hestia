@@ -1,44 +1,39 @@
-<h2> <%= "Hello #{current_user.profile.first_name.capitalize}"  %></h2>
-<% if current_user.profile.picture.attached? %>
-  <%= cl_image_tag current_user.profile.picture.key,
-    width: 100, height: 100, crop: :thumb, gravity: :face %>
-<% else  %>
-  <%= cl_image_tag "https://res.cloudinary.com/drnblm552/image/upload/v1607017224/defaut_avatar_svlhcb.jpg",
-      width: 100, height: 100, crop: :thumb, gravity: :face %>
-<% end  %>
+<div class="container1">
+  <%# if current_user.profile.picture.attached? %>
+    <%# cl_image_tag current_user.profile.picture.key, class: "avatar" %>
+  <%# else  %>
+    <%# cl_image_tag "https://res.cloudinary.com/drnblm552/image/upload/v1607017224/defaut_avatar_svlhcb.jpg", class: "avatar" %>
+  <%# end  %>
+  <h1 class="parme"> <br> <%= "Hello #{current_user.profile.first_name.capitalize} !"  %></h1>
 
-<!-- <p> Membres de la house : </p>
-  <ul>
+  <!-- <p> Membres de la house : </p>
+    <ul>
+      <% @house.habitants.each do |habitant| %>
+        <li> <%= habitant.user.profile.first_name %> </li>
+      <% end %>
+    </ul>
+
+  <h2> SCORE current_user : <%= current_user.profile.score %> </h2> -->
+
+  <h2> <br> Score </h2>
+    <p class="pink">
     <% @house.habitants.each do |habitant| %>
-      <li> <%= habitant.user.profile.first_name %> </li>
-    <% end %>
-  </ul>
+      <% if habitant.user.profile.picture.attached? %>
+        <%= cl_image_tag habitant.user.profile.picture.key, class: "avatar-large"%>
+      <% else  %>
+        <%= cl_image_tag "https://res.cloudinary.com/drnblm552/image/upload/v1607017224/defaut_avatar_svlhcb.jpg", class: "avatar-large" %>
+      <% end  %>
+      <%= "#{habitant.user.profile.nickname} : #{habitant.user.profile.score}"%>
 
-<h2> SCORE current_user : <%= current_user.profile.score %> </h2> -->
+      <% end %>
+    </p>
 
-<h2> Score des membres de la house : </h2>
-  <ul>
-    <% @house.habitants.each do |habitant| %>
-      <li>
-        <% if habitant.user.profile.picture.attached? %>
-          <%= cl_image_tag habitant.user.profile.picture.key,
-            width: 100, height: 100, crop: :thumb, gravity: :face %>
-        <% else  %>
-          <%= cl_image_tag "https://res.cloudinary.com/drnblm552/image/upload/v1607017224/defaut_avatar_svlhcb.jpg",
-              width: 100, height: 100, crop: :thumb, gravity: :face %>
-        <% end  %>
-        <%= habitant.user.profile.nickname %>
-        <%= habitant.user.profile.score %>
-      </li>
-    <% end %>
-  </ul>
+  <h2> <br> Liste des tâches </h2>
+    <div class="cards px-2">
+      <% @tasks.each do |task| %>
+        <p> <%= link_to task.name.capitalize, task_path(task), class:"card-category" %> </p>
+        <%# task.points %>
+      <% end %>
+    </div>
 
-<h2> Liste des tâches </h2>
-<ul>
-  <% @tasks.each do |task| %>
-    <li>
-    <%= link_to task.name.capitalize, task_path(task) %>
-    <%= task.points %> points
-  </li>
-  <% end %>
-</ul>
+</div>
