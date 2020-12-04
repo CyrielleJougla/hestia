@@ -1,10 +1,16 @@
-<h1> Ajouter une tache </h1>
+<div class="container1">
 
-<%= simple_form_for [@house, @task] do |f| %>
-  <%= f.input :name, label:"Nom : " %>
-  <%= f.input :points, label: "Points" %>
-  <%= f.input :description, label:"Description : " %>
-  <%# f.input :user_id, label: "Attribué à", collection:  %>
-  <%= f.input :status, label: "Fait" %>
-  <%= f.button :submit %>
-<% end %>
+ <br> <h1> AJOUTER UNE TÂCHE </h1>
+
+
+  <%= image_tag "products.png", style: "height:200px; width:200px;"%>
+
+
+  <%= simple_form_for [@house, @task] do |f| %>
+    <%=f.input :name, label:"Nom : " %>
+    <%= f.input :points, label: "Points"%>
+    <%= f.input :description, label:"Description : "%>
+    <%= f.input :status, label: "Fait" %>
+    <%= f.button :submit %>
+     <% end %>
+</div>
