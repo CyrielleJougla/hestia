@@ -1,15 +1,15 @@
-// .progress {
-//   margin-bottom: 20px;
-// }
+.progress {
+  background-color: transparent !important;
+  height: 40px !important;
 
-// .progress-bar {
-//   width: 0;
-// }
+}
 
-// .bg-purple {
-//   background-color: #825CD6 !important;
-// }
+.progress-bar {
+  width: 0;
+}
 
-// .progress .progress-bar {
-//   transition: unset;
-// }
+.bg-white {
+  background-color: #fff !important;
+  border-radius: 5px;
+}
+

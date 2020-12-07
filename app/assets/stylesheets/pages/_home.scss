@@ -1,1 +1,39 @@
 // Specific CSS for your home-page
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+.score-container {
+  width: 90% !important;
+  background-color: rgba(250,250,250,0.3);
+  border-radius: 20px;
+  padding: 15px;
+}
+
+.avatar-score-bar-nickname-block {
+  // width: 85% !important;
+  // background-color: rgba(250,250,250,0.3);
+  // border-radius: 5px;
+
+}
+
+.avatar-score-bar-block {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  .score-bar-block {
+    margin-left: -10px;
+    flex-grow: 2;
+  }
+}
+
+.nickname-block {
+  display: flex;
+  justify-content: flex-start;
+}
