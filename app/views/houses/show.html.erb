@@ -40,7 +40,7 @@
       <% @tasks.each do |task| %>
       <div class="task-card">
         <p> <%= link_to task.name.capitalize, task_path(task), class:"task-card-text" %>
-            <%= task.points %>
+            <div class="circle"><%= "#{task.points} points" %> </p></div>
         </p>
       </div>
       <% end %>
