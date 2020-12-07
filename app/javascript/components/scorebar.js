@@ -11,7 +11,7 @@ export const initScoreBar = () => {
       duration: delay,
       // easing: 'swing',
       step: function(now) {
-        $(this).text(Math.ceil(now) + '%');
+        $(this).text(Math.ceil(now) + 'pts');
       }
     });
   });
