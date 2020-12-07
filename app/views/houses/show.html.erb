@@ -1,4 +1,3 @@
-<div class="container1">
   <%# if current_user.profile.picture.attached? %>
     <%# cl_image_tag current_user.profile.picture.key, class: "avatar" %>
   <%# else  %>
@@ -16,7 +15,7 @@
   <h2> SCORE current_user : <%= current_user.profile.score %> </h2> -->
 
   <h2> <br> Score </h2>
-    <p class="pink">
+    <p>
       <% @house.habitants.each do |habitant| %>
         <% if habitant.user.profile.picture.attached? %>
           <%= cl_image_tag habitant.user.profile.picture.key, class: "avatar-large"%>
@@ -39,8 +38,10 @@
 
   <h2> <br> Liste des tâches </h2>
       <% @tasks.each do |task| %>
-        <p> <%= link_to task.name.capitalize, task_path(task), class:"task-card" %> </p>
-<!--         <% task.points %>
- -->      <% end %>
+      <div class="task-card">
+        <p> <%= link_to task.name.capitalize, task_path(task), class:"task-card-text" %>
+            <%= task.points %>
+        </p>
+      </div>
+      <% end %>
 
-</div>
