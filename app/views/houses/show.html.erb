@@ -25,7 +25,12 @@
         <% end  %>
         <%= "#{habitant.user.profile.nickname} : #{habitant.user.profile.score}"%>
         <div class="progress">
-          <div class="progress-bar" role="progressbar" style="width: <%= habitant.user.profile.score*100/@total_points_tasks %>%;" aria-valuenow="10" aria-valuemin="0" aria-valuemax="40">
+          <% if habitant.user.profile.score.nil? %>
+            <% my_score = 0 %>
+          <% else %>
+            <% my_score = habitant.user.profile.score*100/@total_points_tasks %>
+          <% end %>
+          <div class="progress-bar" role="progressbar" style="width: <%= my_score %>%;" aria-valuenow="10" aria-valuemin="0" aria-valuemax="90">
             <%= habitant.user.profile.score %>
           </div>
         </div>
