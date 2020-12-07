@@ -29,11 +29,9 @@
     </p>
 
   <h2> <br> Liste des tâches </h2>
-    <div class="cards px-2">
       <% @tasks.each do |task| %>
-        <p> <%= link_to task.name.capitalize, task_path(task), class:"card-category" %> </p>
-        <%# task.points %>
-      <% end %>
-    </div>
+        <p> <%= link_to task.name.capitalize, task_path(task), class:"task-card" %> </p>
+<!--         <% task.points %>
+ -->      <% end %>
 
 </div>
