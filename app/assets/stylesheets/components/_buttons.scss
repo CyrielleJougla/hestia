@@ -37,8 +37,27 @@
 }
 
 
-.button-delete{
+.button-task{
+  display: inline-block;
+  width: 120px;
+  height: 60px;
+  margin: auto;
+  color: #9DC0F5;
+  padding: 20px 24px;
+  border-radius: 4px;
+  background: #FFF;
+  opacity: 70%;
+  text-decoration: none !important;
+  font-weight: lighter!important;
+  text-align: center;
+  letter-spacing: 1.5px;
+  font-size: 17px;
+  font-family: 'Roboto', sans-serif;
+}
 
+.button-task:hover{
+  text-decoration: none;
+  color: #777DE8;
 }
 
 .icone-edit {
