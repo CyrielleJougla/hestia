@@ -4,7 +4,7 @@
   <%= f.input :name, label:"Nom : " %>
   <%= f.input :points, label: "Points" %>
   <%= f.input :description, label:"Description : " %>
-  <%# f.input :user_id, label: "Attribué à", collection:  %>
+  <%# f.input :user_id, label: "Attribué à", collection: @members, label_method: :nickname %>
   <%= f.input :status, label: "Fait?" %>
   <%= f.button :submit,label:"Valider"  %>
 <% end %>
