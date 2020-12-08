@@ -21,7 +21,6 @@
           </li>
 
           <% if current_user.habitant.house.gift %>
-
             <li class="nav-item">
               <%= link_to "🎁", gift_path(current_user.habitant.house.gift) , class: "nav-link" %>
             </li>
