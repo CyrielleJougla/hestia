@@ -10,12 +10,14 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
   </head>
       <body>
-       <div class="big-container">
-          <%= render 'shared/flashes' %>
-
-        <div class="container1"><%= yield %></div>
-        <div class="nav-container"><%= render 'shared/navbar' %></div>
-
-      </div>
+         <div class="background-container">
+              <%= render 'shared/flashes' %>
+            <div class="container">
+              <%= yield %>
+            </div>
+            <div class="nav-container">
+              <%= render 'shared/navbar' %>
+            </div>
+        </div>
       </body>
 </html>
