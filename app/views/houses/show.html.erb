@@ -1,10 +1,17 @@
-<div class="container1">
+<div class="container background-gradient scroll-container">
   <%# if current_user.profile.picture.attached? %>
     <%# cl_image_tag current_user.profile.picture.key, class: "avatar" %>
   <%# else  %>
     <%# cl_image_tag "https://res.cloudinary.com/drnblm552/image/upload/v1607017224/defaut_avatar_svlhcb.jpg", class: "avatar" %>
   <%# end  %>
-  <h1 class="parme"> <br> <%= "Hello #{current_user.profile.first_name.capitalize} !"  %></h1>
+  <div class ="avatar-border-white margin-top-20 margin-bottom--15">
+    <% if @habitant.user.profile.picture.nil? %>
+      <%= cl_image_tag habitant.user.profile.picture.key, class: "avatar-x-large"%>
+    <% else  %>
+      <%= cl_image_tag "https://res.cloudinary.com/drnblm552/image/upload/v1607017224/defaut_avatar_svlhcb.jpg", class: "avatar-x-large" %>
+    <% end %>
+  </div>
+  <h1 class="parme color-white font-bold-900 margin-bottom-20"> <%= "HELLO #{current_user.profile.first_name.upcase} !" %></h1>
 
   <!-- <p> Membres de la house : </p>
     <ul>
@@ -15,25 +22,42 @@
 
   <h2> SCORE current_user : <%= current_user.profile.score %> </h2> -->
 
-  <h2> <br> Score </h2>
-    <p class="pink">
+
+  <div class="score-container">
+    <h3 class="margin-top-10 margin-bottom-20">And the winner is ?</h3>
     <% @house.habitants.each do |habitant| %>
-      <% if habitant.user.profile.picture.attached? %>
-        <%= cl_image_tag habitant.user.profile.picture.key, class: "avatar-large"%>
-      <% else  %>
-        <%= cl_image_tag "https://res.cloudinary.com/drnblm552/image/upload/v1607017224/defaut_avatar_svlhcb.jpg", class: "avatar-large" %>
-      <% end  %>
-      <%= "#{habitant.user.profile.nickname} : #{habitant.user.profile.score}"%>
+      <div class="avatar-score-bar-nickname-block">
+        <div class="avatar-score-bar-block">
+          <% if habitant.user.profile.picture.attached? %>
+            <%= cl_image_tag habitant.user.profile.picture.key, class: "avatar-large z-index"%>
+          <% else  %>
+            <%= cl_image_tag "https://res.cloudinary.com/drnblm552/image/upload/v1607017224/defaut_avatar_svlhcb.jpg", class: "avatar-large z-index" %>
+          <% end  %>
+          <div class="progress score-bar-block">
+            <% if habitant.user.profile.score.nil? %>
+              <% my_score = 0 %>
+            <% else %>
+              <% my_score = habitant.user.profile.score*100/@total_points_tasks %>
+              <% decal_x = 22 %>
+            <% end %>
+            <div class="progress-bar bg-white mix-blend-mode font-bold-900" role="progressbar" style="width: 0%;" aria-valuenow="<%= my_score + decal_x %>" aria-valuemin="0" aria-valuemax="100">
+              <%= habitant.user.profile.score %>
+            </div>
+          </div>
+        </div>
+        <div class="nickname-block padding-left-5 font-bold-500">
+          <%= "#{habitant.user.profile.nickname}"%>
+        </div>
 
-      <% end %>
-    </p>
-
+      </div>
+    <% end %>
+  </div>
   <h2> <br> Liste des tâches </h2>
-    <div class="cards px-2">
       <% @tasks.each do |task| %>
-        <p> <%= link_to task.name.capitalize, task_path(task), class:"card-category" %> </p>
-        <%# task.points %>
+      <div class="task-card">
+        <p> <%= link_to task.name.capitalize, task_path(task), class:"task-card-text" %>
+            <div class="circle"><%= "#{task.points} points" %> </p></div>
+        </p>
+      </div>
       <% end %>
-    </div>
 
-</div>

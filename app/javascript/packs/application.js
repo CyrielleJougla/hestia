@@ -33,9 +33,14 @@ import { initSelect2 } from '../plugins/init_select2';
 // [...]
 
 
+import { initScoreBar } from '../components/scorebar';
+
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
   initSelect2();
   taskForm();
+  initScoreBar();
 });
+
+

@@ -1,13 +1,12 @@
-<div class="container1">
-  <h1> <br> <%= @task.name.capitalize %> </h1>
-  <h2 class=pink> <%= "#{@task.points} points" %> </h2>
+    <h1 class="title, parme"> <br> <%= @task.name.capitalize %> </h1>
+    <h2 class="second-tile, pink"> <%= " ★ #{@task.points} points ★" %> </h2>
 
-  <br> <p> <%= "#{@task.description}" %> </p>
+     <p class="parme"> <%= "#{@task.description.capitalize}" %> </p>
+
 
   <div class="card-square">
     <%= image_tag "menage.png", style: "height:200px; width:200px;"%>
   </div>
 
-  <br> <%= link_to "✏️", edit_task_path(@task), class:"icone-edit" %>
-  <%= link_to "🗑", task_path(@task), method: :delete, class:"icone-edit" %>
-</div>
+  <br> <%= link_to "EDIT", edit_task_path(@task), class:"button-task" %>
+  <%= link_to "DELETE", task_path(@task), method: :delete, class:"button-task" %>
