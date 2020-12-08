@@ -38,8 +38,8 @@
               <% my_score = 0 %>
             <% else %>
               <% my_score = habitant.user.profile.score*100/@total_points_tasks %>
-              <% decal_x = 22 %>
             <% end %>
+            <% decal_x = 22 %>
             <div class="progress-bar bg-white mix-blend-mode font-bold-900" role="progressbar" style="width: 0%;" aria-valuenow="<%= my_score + decal_x %>" aria-valuemin="0" aria-valuemax="100">
               <%= habitant.user.profile.score %>
             </div>
