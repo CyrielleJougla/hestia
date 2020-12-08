@@ -10,6 +10,8 @@ body {
 
   .container {
   height: calc(100vh - 56px);
+  padding-top: 20px;
+  padding-bottom:30px;
   overflow-y: scroll;
   }
 }
