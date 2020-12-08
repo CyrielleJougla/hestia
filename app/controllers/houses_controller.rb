@@ -21,7 +21,7 @@ class HousesController < ApplicationController
     render :new if @habitant.house.nil?
     @user = current_user
     @house = House.find(params[:id])
-    @tasks = @house.tasks
+    @tasks = @house.tasks.select{ |task| task.status == false }
   end
 
   private
