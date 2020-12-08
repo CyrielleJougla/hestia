@@ -6,7 +6,57 @@ class TasksController < ApplicationController
   def new
     @house = current_user.habitant.house
     @task = Task.new
+    @variable = {
+      poubelles: {
+        name: "Sortir les poubelles",
+        description: "Avant qu'elles ne puent !",
+        points: 10
+      },
+      chien: {
+        name: "Sortir le chien - 5 points",
+        description: "Faire une balade avec chien-chien d'amour",
+        points: 5
+      },
+      litiere: {
+        name: "Changer la litière",
+        description: "Courage ! Le chachou sera content !",
+        points: 10
+      },
+      lessive: {
+        name: "Lancer la lessive",
+        description: "Bien trier les couleurs !",
+        points: 5
+      },
+      etendre: {
+        name: "Etendre la lessive",
+        description: "Bien au soleil",
+        points: 10
+      },
+      aspirateur: {
+        name: "Passer l'aspirateur",
+        description: "Passer l'aspirateur dans toutes les pièces",
+        points: 15
+      },
+      lit: {
+        name: "Faire le lit",
+        description: "Ne pas juste ramener la couette pour faire genre...",
+        points: 5
+      },
+      repassage: {
+        name: "Faire le repassage",
+        description: "Tiens le coup, ça va aller",
+        points: 30
+      }
+    }
+    @task_names = []
+    @variable.each do |k, v|
+      @task_names << v[:name]
+    end
+
+
+
   end
+
 
   def create
     @task = Task.new(task_params)

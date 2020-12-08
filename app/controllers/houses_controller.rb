@@ -21,12 +21,14 @@ class HousesController < ApplicationController
     render :new if @habitant.house.nil?
     @user = current_user
     @house = House.find(params[:id])
+
     @tasks = @house.tasks
     @tot_tasks = Task.all
     @total_points_tasks = 0
     @tot_tasks.each do |task|
       @total_points_tasks += task.points
     end
+
   end
 
   private
