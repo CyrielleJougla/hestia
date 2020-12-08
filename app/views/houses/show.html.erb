@@ -1,9 +1,5 @@
-<div class="container background-gradient scroll-container">
-  <%# if current_user.profile.picture.attached? %>
-    <%# cl_image_tag current_user.profile.picture.key, class: "avatar" %>
-  <%# else  %>
-    <%# cl_image_tag "https://res.cloudinary.com/drnblm552/image/upload/v1607017224/defaut_avatar_svlhcb.jpg", class: "avatar" %>
-  <%# end  %>
+<div class="background-container">
+  <div class="container">
   <div class ="avatar-border-white margin-top-20 margin-bottom--15">
     <% if @habitant.user.profile.picture.nil? %>
       <%= cl_image_tag habitant.user.profile.picture.key, class: "avatar-x-large"%>
@@ -11,18 +7,7 @@
       <%= cl_image_tag "https://res.cloudinary.com/drnblm552/image/upload/v1607017224/defaut_avatar_svlhcb.jpg", class: "avatar-x-large" %>
     <% end %>
   </div>
-  <h1 class="parme color-white font-bold-900 margin-bottom-20"> <%= "HELLO #{current_user.profile.first_name.upcase} !" %></h1>
-
-  <!-- <p> Membres de la house : </p>
-    <ul>
-      <% @house.habitants.each do |habitant| %>
-        <li> <%= habitant.user.profile.first_name %> </li>
-      <% end %>
-    </ul>
-
-  <h2> SCORE current_user : <%= current_user.profile.score %> </h2> -->
-
-
+  <h1 class="margin-bottom-20"> <%= "HELLO #{current_user.profile.first_name.upcase} !" %></h1>
   <div class="score-container">
     <h3 class="margin-top-10 margin-bottom-20">And the winner is ?</h3>
     <% @house.habitants.each do |habitant| %>
@@ -38,16 +23,16 @@
               <% my_score = 0 %>
             <% else %>
               <% my_score = habitant.user.profile.score*100/@total_points_tasks %>
-              <% decal_x = 22 %>
             <% end %>
+            <% decal_x = 22 %>
             <div class="progress-bar bg-white mix-blend-mode font-bold-900" role="progressbar" style="width: 0%;" aria-valuenow="<%= my_score + decal_x %>" aria-valuemin="0" aria-valuemax="100">
               <%= habitant.user.profile.score %>
             </div>
           </div>
         </div>
-        <div class="nickname-block padding-left-5 font-bold-500">
+        <p class="nickname-block padding-left-5 font-bold-500">
           <%= "#{habitant.user.profile.nickname}"%>
-        </div>
+        </p>
 
       </div>
     <% end %>
@@ -60,4 +45,5 @@
         </p>
       </div>
       <% end %>
-
+    </div>
+</div>

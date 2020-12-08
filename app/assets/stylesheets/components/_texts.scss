@@ -1,39 +1,60 @@
+// h1{
+//   letter-spacing: 1,5px;
+//   font-weight: lighter;
+//   text-transform: uppercase;
+//   color: #777DE8;
+// }
+// h2{
+//   letter-spacing: 2px;
+//   text-transform: uppercase;
+//   font-weight: 10;
+//   font-size: 20px;
+// }
 
+// p{
+//   font-weight: lighter;
+//   letter-spacing: 0,9px;
+//   font-family: 'Roboto', sans-serif;
+//   color: #fff;
+//   // font-style: italic;
+// }
+
+// .pink {
+//   color: #f65867;
+// }
+
+
+// .parme {
+//   color: #777DE8;
+// }
+
+// .white {
+//   color: white;
+//   text-decoration: none;
+// }
 
 h1{
-  letter-spacing: 1,5px;
-  font-weight: lighter;
+  font-weight: 900;
   text-transform: uppercase;
-  color: #777DE8;
+  color: #fff;
 }
 
 h2{
-  letter-spacing: 2px;
+  color: #fff;
   text-transform: uppercase;
-  font-weight: 10;
   font-size: 20px;
 }
 
+h3{
+  color: #fff;
+  font-size: 32px;
+  text-align: center;
+}
+
 p{
-  font-weight: lighter;
-  letter-spacing: 0,9px;
+  color: #fff;
   font-family: 'Roboto', sans-serif;
-  color: #777DE8;
-  // font-style: italic;
-}
-
-.pink {
-  color: #f65867;
-}
-
-
-.parme {
-  color: #777DE8;
-}
-
-.white {
-  color: white;
-  text-decoration: none;
+  margin: 0;
 }
 
 .color-white {
@@ -43,6 +64,7 @@ p{
 .font-bold-500 {
   font-weight: 500;
 }
+
 .font-bold-900 {
   font-weight: 900;
 }
