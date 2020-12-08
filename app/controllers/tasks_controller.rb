@@ -45,11 +45,16 @@ class TasksController < ApplicationController
   def edit
     @task = Task.find(params[:id])
     @house = @task.house
+
   end
 
   def update
     @task = Task.find(params[:id])
-    @task.update(task_params)
+    if params[:task].nil?
+      @task.update(status: true)
+    else
+      @task.update(task_params)
+    end
     task_status
     redirect_to house_path(@task.house)
   end

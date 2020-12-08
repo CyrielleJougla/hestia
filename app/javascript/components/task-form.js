@@ -1,30 +1,6 @@
 import $ from 'jquery';
 import 'select2';
 
-const pointsInput = document.getElementById("task_points");
-const descriptionInput = document.getElementById("task_description");
-
-
-const taskForm = () => {
-
-  $('.select2').on('select2:select', function (e) {
-    let taskName = event.target.innerText;
-    let key = getKeyByValue(object, taskName);
-    let points = object[key]['points'];
-    let description = object[key]['description'];
-    pointsInput.value = points;
-    descriptionInput.value = description;
-
-  });
-
-};
-
-export { taskForm };
-
-function getKeyByValue(object, value) { 
-  return Object.keys(object).find(key => object[key]['name'] === value);
- } 
-
 const object = {
       poubelles: {
         name: 'Sortir les poubelles',
@@ -67,3 +43,24 @@ const object = {
         points: 30
       }
     }
+
+const taskForm = () => {
+  const pointsInput = document.getElementById("task_points");
+  const descriptionInput = document.getElementById("task_description");
+  $('.select2').on('select2:select', function (e) {
+    let taskName = event.target.innerText;
+    let key = getKeyByValue(object, taskName);
+    let points = object[key]['points'];
+    let description = object[key]['description'];
+    pointsInput.value = points;
+    descriptionInput.value = description;
+  });
+
+};
+
+function getKeyByValue(object, value) { 
+  return Object.keys(object).find(key => object[key]['name'] === value);
+ } 
+
+export { taskForm };
+

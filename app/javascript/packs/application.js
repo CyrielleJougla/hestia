@@ -29,16 +29,16 @@ import { initScoreBar } from '../components/scorebar';
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
-// import { taskForm } from '../components/task-form';
-// import { initSelect2 } from '../plugins/init_select2';
 
-// [...]
+import { taskForm } from '../components/task-form';
+import { initSelect2 } from '../plugins/init_select2';
+import { initScoreBar } from '../components/scorebar';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
-  // initSelect2();
-  // taskForm();
+  taskForm();
+  initSelect2();
   initScoreBar();
 });
 
