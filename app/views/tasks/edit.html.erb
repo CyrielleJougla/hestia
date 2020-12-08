@@ -5,6 +5,6 @@
   <%= f.input :points, label: "Points" %>
   <%= f.input :description, label:"Description : " %>
   <%# f.input :user_id, label: "Attribué à", collection: @members, label_method: :nickname %>
-  <%= f.input :status, label: "Fait?" %>
+  <%= f.hidden_field :status %>
   <%= f.button :submit,label:"Valider"  %>
 <% end %>
