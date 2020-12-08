@@ -32,7 +32,7 @@ const object = {
         points: 10
       },
       chien: {
-        name: "Sortir le chien - 5 points",
+        name: "Sortir le chien",
         description: "Faire une balade avec chien-chien d'amour",
         points: 5
       },
