@@ -1,4 +1,9 @@
 class TasksController < ApplicationController
+  def show_done
+    @house = current_user.habitant.house
+    @tasks_to_do = @house.tasks.select{ |task| task.status == true}
+  end
+
   def show
     @task = Task.find(params[:id])
   end

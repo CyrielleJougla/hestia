@@ -1,0 +1,6 @@
+<h1> Historique des tâches </h1>
+
+<% @tasks_to_do.each do |task| %>
+  <%= "#{task.name} : #{task.points} points" %>
+  <%= "- Fait par #{task.user.profile.first_name.capitalize}" %>
+<% end %>

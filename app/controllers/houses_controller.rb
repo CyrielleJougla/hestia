@@ -27,7 +27,7 @@ class HousesController < ApplicationController
     @tot_tasks.each do |task|
       @total_points_tasks += task.points.to_i
     end
-
+    @tasks_to_do = @house.tasks.select{ |task| task.status == false}
   end
 
   private
