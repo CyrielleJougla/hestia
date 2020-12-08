@@ -5,7 +5,7 @@
     <%# cl_image_tag "https://res.cloudinary.com/drnblm552/image/upload/v1607017224/defaut_avatar_svlhcb.jpg", class: "avatar" %>
   <%# end  %>
   <div class ="avatar-border-white margin-top-20 margin-bottom--15">
-    <% if @habitant.user.profile.picture.attached? %>
+    <% if @habitant.user.profile.picture.nil? %>
       <%= cl_image_tag habitant.user.profile.picture.key, class: "avatar-x-large"%>
     <% else  %>
       <%= cl_image_tag "https://res.cloudinary.com/drnblm552/image/upload/v1607017224/defaut_avatar_svlhcb.jpg", class: "avatar-x-large" %>
