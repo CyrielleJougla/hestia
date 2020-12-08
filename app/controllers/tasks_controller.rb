@@ -6,7 +6,25 @@ class TasksController < ApplicationController
   def new
     @house = current_user.habitant.house
     @task = Task.new
+    @task_names = [
+      "Sortir les poubelles",
+      "Sortir le chien",
+      "Changer la litière",
+      "Lancer la lessive",
+      "Etendre la lessive",
+      "Passer l'aspirateur",
+      "Faire le lit",
+      "Faire le repassage"
+    ]
+    @members = []
+    if current_user.habitant
+      current_user.habitant.house.habitants.each do |habitant|
+        @members << habitant.user.profile
+      end
+    end
+
   end
+
 
   def create
     @task = Task.new(task_params)

@@ -25,8 +25,9 @@ class HousesController < ApplicationController
     @tot_tasks = Task.all
     @total_points_tasks = 0
     @tot_tasks.each do |task|
-      @total_points_tasks += task.points
+      @total_points_tasks += task.points.to_i
     end
+
   end
 
   private

@@ -1,7 +1,13 @@
-    <h1 class="title, parme"> <br> <%= @task.name.capitalize %> </h1>
-    <h2 class="second-tile, pink"> <%= " ★ #{@task.points} points ★" %> </h2>
+<h1 class="title, parme"> <br> <%= @task.name.capitalize %> </h1>
+<h2 class="second-tile, pink"> <%= " ★ #{@task.points} points ★" %> </h2>
 
-     <p class="parme"> <%= "#{@task.description.capitalize}" %> </p>
+<p class="parme"> <%= "#{@task.description.capitalize}" %> </p>
+
+<% if @task.user %>
+  <p> <%= "#{@task.user.profile.first_name.capitalize}" %> </p>
+<% else %>
+  <p> Non attribué </p>
+<% end %>
 
 
   <div class="card-square">
@@ -10,3 +16,4 @@
 
   <br> <%= link_to "EDIT", edit_task_path(@task), class:"button-task" %>
   <%= link_to "DELETE", task_path(@task), method: :delete, class:"button-task" %>
+  <br>
