@@ -17,12 +17,14 @@
   width: 120px;
   height: 60px;
   margin: auto;
-  color: #9DC0F5;
+  color: #787EE8;
   line-height: 60px;
   margin-bottom: 10px;
   margin-top: 10px;
-  border-radius: 4px;
-  background: #FFF;
+  margin-left: 10px;
+  margin-right: 10px;
+  border-radius: 10px;
+  background: rgba(250, 250, 250, 0.5);
   opacity: 70%;
   text-decoration: none !important;
   font-weight: lighter!important;
@@ -35,7 +37,7 @@
 
 .button-edit:hover{
   text-decoration: none;
-  color: #777DE8;
+  color: #fff;
 }
 
 
@@ -65,4 +67,9 @@
 
 .icone-edit {
   text-decoration: none !important;
+}
+
+.btn-edit-delete {
+  display: flex;
+  justify-content: center;
 }

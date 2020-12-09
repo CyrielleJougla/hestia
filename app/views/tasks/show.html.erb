@@ -1,22 +1,22 @@
 <h1 class="title, parme"> <%= @task.name.capitalize %> </h1>
 <h2 class="second-tile, pink"> <%= " ★ #{@task.points} points ★" %> </h2>
 
-<p class="parme"> <%= "#{@task.description.capitalize}" %> </p>
 
 <% if @task.user %>
   <p> <%= "#{@task.user.profile.first_name.capitalize}" %> </p>
 <% else %>
-  <p> Non attribué </p>
+  <p> Non attribuée </p>
 <% end %>
 
 <%= link_to "Fait", task_path, method: :put %>
 
   <div class="card-square">
+    <p> <%= "#{@task.description.capitalize}" %> </p>
+
     <%= image_tag "menage.png", style: "height:200px; width:200px;"%>
   </div>
 
-<div>
-  <br> <%= link_to "MODIFIER", edit_task_path(@task), class:"button-task" %>
-  <%= link_to "SUPPRIMER", task_path(@task), method: :delete, class:"button-task" %>
-  <br>
+<div class="btn-edit-delete">
+  <%= link_to "MODIFIER", edit_task_path(@task), class:"button-edit" %>
+  <%= link_to "SUPPRIMER", task_path(@task), method: :delete, class:"button-edit" %>
 </div>
