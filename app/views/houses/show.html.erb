@@ -5,7 +5,7 @@
     <%= cl_image_tag @habitant.user.profile.picture.key, class: "avatar-x-large"%>
   <% end %>
 </div>
-<h1 class="margin-bottom-20"> <%= "Hello #{current_user.profile.first_name.upcase} !" %></h1>
+<h1 class="margin-bottom-20"> <br><%= "Hello #{current_user.profile.first_name.upcase} !" %></h1>
 <div class="score-container">
   <h3 class="margin-top-10 margin-bottom-20">And the winner is ?</h3>
   <% @house.habitants.each do |habitant| %>
