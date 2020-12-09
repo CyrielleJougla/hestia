@@ -4,12 +4,13 @@
 
   <%= image_tag "products.png", style: "height:150px; width:150px;"%>
 
-
+<div id="formdiv">
   <%= simple_form_for [@house, @task] do |f| %>
-    <%= f.input :name, label:"Nom : ", collection: @task_names, input_html: { class: 'select2' } %>
+    <%= f.input :name, label:"Nom", collection: @task_names, input_html: { class: '' } %>
     <%= f.input :points, label: "Points"%>
-    <%= f.input :description, label:"Description : "%>
-    <%= f.input :user_id, label: "Attribué à", collection: @members, label_method: :nickname %>
+    <%= f.input :description, label:"Description"%>
+    <%= f.input :user_id, label: "Attribuée à", collection: @members, label_method: :nickname %>
     <%= f.hidden_field :status %>
     <%= f.button :submit, "Valider" %>
   <% end %>
+</div>

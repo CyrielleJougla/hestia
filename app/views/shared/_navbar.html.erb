@@ -9,24 +9,34 @@
         <% if current_user.habitant %>
 
           <li class="nav-item active">
-          <%= link_to "🏠", house_path(current_user.habitant.house), class: "nav-link" %>
+          <%= link_to house_path(current_user.habitant.house), class: "nav-link" do %>
+            <%= image_tag "house.png", style: "height:30px; width:30px;"%>
+          <% end %>
           </li>
 
           <li class="nav-item">
-            <%= link_to "➕", new_house_task_path(current_user.habitant.house), class: "nav-link" %>
+            <%= link_to new_house_task_path(current_user.habitant.house), class: "nav-link" do %>
+              <%= image_tag "plus.png", style: "height:30px; width:30px;"%>
+            <% end %>
           </li>
 
           <li class="nav-item">
-            <%= link_to "✅", tasks_show_done_path , class: "nav-link" %>
+            <%= link_to tasks_show_done_path , class: "nav-link" do %>
+              <%= image_tag "testing.png", style: "height:30px; width:30px;"%>
+            <% end %>
           </li>
 
           <% if current_user.habitant.house.gift %>
             <li class="nav-item">
-              <%= link_to "🎁", gift_path(current_user.habitant.house.gift) , class: "nav-link" %>
+              <%= link_to gift_path(current_user.habitant.house.gift) , class: "nav-link" do %>
+                <%= image_tag "gift.png", style: "height:30px; width:30px;"%>
+              <% end %>
             </li>
           <% else %>
             <li class="nav-item">
-              <%= link_to "🎁", new_house_gift_path(current_user.habitant.house) , class: "nav-link" %>
+              <%= link_to new_house_gift_path(current_user.habitant.house) , class: "nav-link" do%>
+                <%= image_tag "gift.png", style: "height:30px; width:30px;"%>
+              <% end %>
             </li>
           <% end %>
 
