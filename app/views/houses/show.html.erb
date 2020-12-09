@@ -1,7 +1,5 @@
 <div class ="avatar-border-white margin-bottom--15">
-
   <% unless @habitant.user.profile.picture.attached? %>
-
     <%= cl_image_tag "https://res.cloudinary.com/drnblm552/image/upload/v1607017224/defaut_avatar_svlhcb.jpg", class: "avatar-x-large" %>
   <% else  %>
     <%= cl_image_tag @habitant.user.profile.picture.key, class: "avatar-x-large"%>

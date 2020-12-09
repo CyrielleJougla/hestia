@@ -90,13 +90,41 @@
   }
   p {
     margin:0px;
-    color: black;
+    color: #7B83E9;
   }
     transition: background-color 0.5s ease-out;
 }
 
-.task-card:hover{
+.task-card:hover {
   background-color: rgba(250,250,250,0.6);
+}
+
+.task-card2 {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: rgba(250,250,250,1);
+  border-radius: 50px;
+  width: 90%;
+  height: 75px;
+  padding:10px;
+  margin-bottom: 10px;
+
+  p {
+    margin:0px;
+    color: #7B83E9;
+    padding-left : 10px;
+  }
+    transition: background-color 0.5s ease-out;
+}
+
+.task-card2:hover {
+  background-color: rgba(250,250,250,0.6);
+}
+
+.text-card2-task {
+display: flex;
+flex-direction: column;
 }
 
 #points{
@@ -122,9 +150,6 @@
   transition: color 0.8s ease-in-out;
   color: #fff !important;
 }
-
-
-
 
 // .task-card-text{
 //   color: #787EE8;
