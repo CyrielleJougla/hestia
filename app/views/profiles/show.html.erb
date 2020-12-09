@@ -1,4 +1,6 @@
-<br> <h1> Mon profil </h1>
+
+<br> <div id="profile-name-card"> <%= "#{current_user.profile.first_name.capitalize}," %>
+<%= "alias #{current_user.profile.nickname.capitalize}" %> <br> </div>
 
 <br>
 <% if current_user.profile.picture.attached? %>
@@ -9,9 +11,9 @@
       width: 150, height: 150, crop: :thumb, gravity: :face %>
 <% end %>
 
-<br> <br> <div class="pink"> <%= "#{current_user.profile.first_name.capitalize}" %> </div>
-<%= "alias #{current_user.profile.nickname.capitalize}" %> <br>
-<%= " #{current_user.profile.description.capitalize}" %> <br>
+<div id="profile-description-card">
+  <%= " '' #{current_user.profile.description.capitalize} '' " %> <br>
+</div>
 
 <%= link_to "Modifier", edit_profile_path(current_user.profile), class:"button-edit" %> <br>
 

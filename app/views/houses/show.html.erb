@@ -7,7 +7,7 @@
 </div>
 <h1 class="margin-bottom-20"> <br><%= "Hello #{current_user.profile.first_name.upcase} !" %></h1>
 <div class="score-container">
-  <h3 class="margin-top-10 margin-bottom-20">And the winner is ?</h3>
+  <h3 class="margin-top-10 margin-bottom-20">Et le gagnant est ... ?</h3>
   <% @house.habitants.each do |habitant| %>
     <div class="avatar-score-bar-nickname-block">
       <div class="avatar-score-bar-block">
@@ -34,7 +34,7 @@
     </div>
   <% end %>
 </div>
-<h2 class="list-tasks-block">Liste des tâches </h2>
+<h2 class="list-tasks-block">à faire cette semaine </h2>
 <% @tasks_to_do.each do |task| %>
   <div class="task-card mix-blend-mode">
     <div class="circle">   </div>
