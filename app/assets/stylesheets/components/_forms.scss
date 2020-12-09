@@ -16,13 +16,54 @@ textarea {
 }
 
 textarea.form-control{
-   width: 60%;
+  width: 60%;
   margin: auto;
   border: none;
   background-color: rgba(250,250,250,0.5);
   color: #2D2D2D;
   border-radius: 10px;
 }
+
+.task-form{
+  width: 60%;
+  margin: auto;
+  border: none;
+  background-color: rgba(250,250,250,0.5);
+  color: #2D2D2D;
+  border-radius: 10px;
+}
+
+select.form-control{
+  width: 60%;
+  margin: auto;
+  border: none;
+  background-color: rgba(250,250,250,0.5);
+  color: #2D2D2D;
+  border-radius: 10px;
+}
+
+// .select2-selection--single{
+//   width: 90%;
+//   margin: auto;
+//   border: none;
+//   background-color: rgba(250,250,250,0.5);
+//   color: #2D2D2D;
+//   border-radius: 10px;
+// }
+
+// .select2-container--default .select2-selection--single{
+//   background-color: rgba(250,250,250,0.5);
+//   border: none;
+//   border-radius: 10px;
+//   color: #2D2D2D;
+// }
+
+// // .select2-container{
+// //   width: 60%;
+// //   margin: auto;
+// //   color: #2D2D2D;
+
+// // }
 
 
 input[type=button], input[type=submit], input[type=reset] {
