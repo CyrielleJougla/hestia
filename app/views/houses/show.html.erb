@@ -37,8 +37,20 @@
 </div>
 <h2 class="list-tasks-block">à faire cette semaine </h2>
 <% @tasks_to_do.each do |task| %>
-  <div class="task-card mix-blend-mode">
-    <div class="circle">   </div>
+  <div class="task-card mmix-blend-mode">
+    <div class="">
+      <% if task.user.nil? %>
+        <div class="circle">
+          <h4>?</h4>
+        </div>
+      <% else  %>
+        <% unless task.user.profile.picture.attached? %>
+          <%= cl_image_tag "https://res.cloudinary.com/drnblm552/image/upload/v1607017224/defaut_avatar_svlhcb.jpg", class: "avatar-large" %>
+        <% else  %>
+          <%= cl_image_tag task.user.profile.picture.key , class: "avatar-large" %>
+        <% end %>
+      <% end %>
+    </div>
      <p class=""><%= link_to task.name.capitalize, task_path(task), class:"task-card-text" %></p>
      <p class=""><%= "#{task.points} points" %></p>
   </div>

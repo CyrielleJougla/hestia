@@ -1,7 +1,7 @@
 <h1 class="margin-bottom-20"> Historique des tâches </h1>
 
 <%  @tasks_to_do.each do |task| %>
-  <div class="task-card2 mix-blend-mode">
+  <div class="task-card2">
     <div class="">
       <% unless task.user.profile.picture.attached? %>
         <%= cl_image_tag "https://res.cloudinary.com/drnblm552/image/upload/v1607017224/defaut_avatar_svlhcb.jpg", class: "avatar-large" %>
