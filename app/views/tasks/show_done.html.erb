@@ -1,6 +1,21 @@
-<h1> Historique des tâches </h1>
+<h1 class="margin-bottom-20"> Historique des tâches </h1>
 
-<% @tasks_to_do.each do |task| %>
-  <%= "#{task.name} : #{task.points} points" %>
-  <%= "- Fait par #{task.user.profile.first_name.capitalize}" %>
+<%  @tasks_to_do.each do |task| %>
+  <div class="task-card2 mix-blend-mode">
+    <div class="">
+      <% unless task.user.profile.picture.attached? %>
+        <%= cl_image_tag "https://res.cloudinary.com/drnblm552/image/upload/v1607017224/defaut_avatar_svlhcb.jpg", class: "avatar-large" %>
+      <% else  %>
+        <%= cl_image_tag task.user.profile.picture.key , class: "avatar-large" %>
+      <% end %>
+    </div>
+    <div class="text-card2-task">
+      <p>
+        <%= "Bravo #{task.user.profile.first_name.capitalize} !" %>
+      </p>
+      <p>
+        <%= "#{task.name} : #{task.points} points" %>
+      </p>
+    </div>
+  </div>
 <% end %>
