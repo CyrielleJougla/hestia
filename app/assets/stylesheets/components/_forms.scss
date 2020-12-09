@@ -1,5 +1,5 @@
 input[type=text], [type=number]{
-  width: 60%;
+  // width: 60%;
   margin: auto;
   border: none;
   background-color: rgba(250,250,250,0.5);
@@ -9,6 +9,10 @@ input[type=text], [type=number]{
 
 label{
   letter-spacing: 1.5px;
+  color: white;
+  text-align: center;
+  margin: auto;
+  margin-bottom: 1px;
 }
 
 textarea {
@@ -16,7 +20,7 @@ textarea {
 }
 
 textarea.form-control{
-  width: 60%;
+  // width: 60%;
   margin: auto;
   border: none;
   background-color: rgba(250,250,250,0.5);
@@ -25,7 +29,7 @@ textarea.form-control{
 }
 
 .task-form{
-  width: 60%;
+  // width: 60%;
   margin: auto;
   border: none;
   background-color: rgba(250,250,250,0.5);
@@ -34,36 +38,13 @@ textarea.form-control{
 }
 
 select.form-control{
-  width: 60%;
+  // width: 60%;
   margin: auto;
   border: none;
   background-color: rgba(250,250,250,0.5);
   color: #2D2D2D;
   border-radius: 10px;
 }
-
-// .select2-selection--single{
-//   width: 90%;
-//   margin: auto;
-//   border: none;
-//   background-color: rgba(250,250,250,0.5);
-//   color: #2D2D2D;
-//   border-radius: 10px;
-// }
-
-// .select2-container--default .select2-selection--single{
-//   background-color: rgba(250,250,250,0.5);
-//   border: none;
-//   border-radius: 10px;
-//   color: #2D2D2D;
-// }
-
-// // .select2-container{
-// //   width: 60%;
-// //   margin: auto;
-// //   color: #2D2D2D;
-
-// // }
 
 
 input[type=button], input[type=submit], input[type=reset] {
@@ -74,7 +55,7 @@ input[type=button], input[type=submit], input[type=reset] {
   color: #787EE8;
   padding: 16px 32px;
   text-decoration: none;
-  margin: 4px 2px;
+  margin: auto;
   cursor: pointer;
 }
 
@@ -82,4 +63,8 @@ input[type=button]:hover, input[type=submit]:hover, input[type=reset]:hover{
   color:white;
 }
 
+#formdiv{
+  margin:auto;
+  text-align: center;
+}
 
