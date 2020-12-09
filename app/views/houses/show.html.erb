@@ -1,10 +1,11 @@
 <div class ="avatar-border-white margin-bottom--15">
-  <% if @habitant.user.profile.picture.nil? %>
+  <% unless @habitant.user.profile.picture.attached? %>
     <%= cl_image_tag "https://res.cloudinary.com/drnblm552/image/upload/v1607017224/defaut_avatar_svlhcb.jpg", class: "avatar-x-large" %>
   <% else  %>
     <%= cl_image_tag @habitant.user.profile.picture.key, class: "avatar-x-large"%>
   <% end %>
 </div>
+
 <h1 class="parme color-white font-bold-900 margin-bottom-20"> <%= "HELLO #{current_user.profile.first_name.upcase} !" %></h1>
 <div class="score-container">
   <h3 class="margin-top-10 margin-bottom-20">And the winner is ?</h3>
