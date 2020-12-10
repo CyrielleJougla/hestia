@@ -1,7 +1,7 @@
 <h1 class="title"> <%= @task.name.capitalize %> </h1>
-<h2 class="blue-points"> <%= " ★ #{@task.points} points ★" %> </h2>
+<h2 class="blue-points margin-top-10"> <%= " ★ #{@task.points} points ★" %> </h2>
 
-<div class="checkbox-container">
+<div class="checkbox-container margin-bottom-10">
   <button id="mark_as_done" class="checkbox <%= @task.status ? 'class1' : 'class2' %>" data-task-id="<%= @task.id %>" data-status="<%= @task.status %>" >
     <div class="checkbox-visual">
       <div>
@@ -29,7 +29,7 @@
 
 <div class="card-square">
   <p> <%= "#{@task.description.capitalize}" %> </p>
-    <%= image_tag "mains-ok.png", style: "height:200px; width:100px;"%>
+    <%= image_tag "mains-ok.png", style: "height:180px; width:90px;"%>
   </div>
 
 <div class="btn-edit-delete">
