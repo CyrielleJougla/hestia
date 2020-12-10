@@ -1,13 +1,6 @@
 <h1 class="title"> <%= @task.name.capitalize %> </h1>
 <h2 class="blue-points"> <%= " ★ #{@task.points} points ★" %> </h2>
 
-
-<% if @task.user %>
-  <p class="task-card task-card-text"> <%= "#{@task.user.profile.first_name.capitalize}" %> </p>
-<% else %>
-  <p class="task-card task-card-text"> Non attribuée </p>
-<% end %>
-
 <div class="checkbox-container">
   <button id="mark_as_done" class="checkbox <%= @task.status ? 'class1' : 'class2' %>" data-task-id="<%= @task.id %>" data-status="<%= @task.status %>" >
     <div class="checkbox-visual">
@@ -16,6 +9,22 @@
     </div>
   </button>
 
+</div>
+
+<div class="task-card3 margin-top-20 margin-bottom-20">
+  <% if @task.user %>
+    <% unless @task.user.profile.picture.attached? %>
+      <%= cl_image_tag "https://res.cloudinary.com/drnblm552/image/upload/v1607017224/defaut_avatar_svlhcb.jpg", class: "avatar-large" %>
+    <% else  %>
+      <%= cl_image_tag @task.user.profile.picture.key , class: "avatar-large" %>
+    <% end %>
+    <p class="task-card-text"> <%= "#{@task.user.profile.first_name.capitalize}" %> </p>
+  <% else %>
+    <div class="circle">
+      <h4>?</h4>
+    </div>
+    <p class=""> Non attribuée </p>
+  <% end %>
 </div>
 
 <div class="card-square">
