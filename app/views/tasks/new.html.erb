@@ -6,8 +6,9 @@
 
 <div id="formdiv">
   <%= simple_form_for [@house, @task] do |f| %>
-    <%= f.input :name, label:"Nom", collection: @task_names, input_html: { class: 'select2' } %>
-    <%= f.input :points, label: "Points", input_html: { min: '1'}%>
+    <%= f.input :name, label:"Nom", collection: @task_names, input_html: { class: 'select2 form-control' } %>
+    <%= f.input :points, label: "Points"%>
+
     <%= f.input :description, label:"Description"%>
     <%= f.input :user_id, label: "Attribuée à", collection: @members, label_method: :nickname %>
     <%= f.hidden_field :status %>

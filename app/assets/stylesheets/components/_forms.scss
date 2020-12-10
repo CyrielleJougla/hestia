@@ -12,8 +12,10 @@ label{
   color: white;
   text-align: center;
   margin: auto;
-  margin-bottom: 1px;
+  margin-bottom: 1px!important;
 }
+
+
 
 textarea {
  background-color: black;
@@ -29,12 +31,31 @@ textarea.form-control{
 }
 
 .task-form{
-  // width: 60%;
+  width: 60%;
   margin: auto;
   border: none;
   background-color: rgba(255,255,255,0.5);
   color: #2D2D2D;
   border-radius: 10px;
+}
+
+
+  .select2-container--default{
+  // width: 60%;
+  margin: auto!important;
+  border: none!important;
+  background-color: rgba(255,255,255,0.5)!important;
+  color: #2D2D2D!important;
+  border-radius: 10px!important;
+}
+
+.select2-selection--single{
+  // width: 60%;
+  margin: auto!important;
+  border: none!important;
+  background-color: rgba(255,255,255,0.2)!important;
+  color: #2D2D2D!important;
+  border-radius: 10px!important;
 }
 
 select.form-control{
@@ -68,3 +89,9 @@ input[type=button]:hover, input[type=submit]:hover, input[type=reset]:hover{
   text-align: center;
 }
 
+span.select2.select2-container.select2-container--default {
+  width: 100% !important;
+}
+label.select.optional {
+  width: 100%;
+}
