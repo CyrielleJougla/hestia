@@ -84,7 +84,8 @@ class TasksController < ApplicationController
     else
       if @task.user != nil
         task_owner = @task.user
-        task_owner.profile.score -= @task.points if task_owner.profile.score > 0
+        task_owner.profile.score -= @task.points if task_owner.profile.score > 0 unless task_owner.profile.score.nil?
+
         task_owner.profile.save
         @task.user = nil
       end
