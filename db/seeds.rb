@@ -33,7 +33,7 @@ house1 = House.create!(name:"La maison du kiff", user:user1)
 habitant1 = Habitant.create!(house:house1, user:user1)
 habitant2 = Habitant.create!(house:house1, user:user2)
 
-Gift.create!(name:"Petit restau", description:"Un restau pour deux du choix du vaincqueur", house:house1)
+Gift.create!(name:"Petit restau", description:"Un restau pour deux du choix du vainqueur", house:house1)
 
 task1 = Task.create!(user:user1, house:house1, name:"Faire le lit", description:"Ne pas juste ramener la couette pour faire genre", points:5, status:false)
 task2 = Task.create!(user:user2, house:house1, name:"Passer l'aspi", description:"Passer l'aspirateur dans toutes les pièces", points:15, status:false)
