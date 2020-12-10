@@ -32,6 +32,7 @@ import "bootstrap";
 import { taskForm } from '../components/task-form';
 import { initSelect2 } from '../plugins/init_select2';
 import { initScoreBar } from '../components/scorebar';
+import { initToggle } from '../components/toggle';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
@@ -39,6 +40,7 @@ document.addEventListener('turbolinks:load', () => {
   taskForm();
   initSelect2();
   initScoreBar();
+  initToggle();
 });
 
 

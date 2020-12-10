@@ -8,11 +8,18 @@
   <p class="task-card task-card-text"> Non attribuée </p>
 <% end %>
 
-<%= link_to "Fait", task_path, method: :put %>
+<div class="checkbox-container">
+  <button id="mark_as_done" class="checkbox <%= @task.status ? 'class1' : 'class2' %>" data-task-id="<%= @task.id %>" data-status="<%= @task.status %>" >
+    <div class="checkbox-visual">
+      <div>
+      </div>
+    </div>
+  </button>
 
-  <div class="card-square">
-    <p> <%= "#{@task.description.capitalize}" %> </p>
+</div>
 
+<div class="card-square">
+  <p> <%= "#{@task.description.capitalize}" %> </p>
     <%= image_tag "mains-ok.png", style: "height:200px; width:100px;"%>
   </div>
 
