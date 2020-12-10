@@ -27,9 +27,7 @@ class TasksController < ApplicationController
         @members << habitant.user.profile
       end
     end
-
   end
-
 
   def create
     @task = Task.new(task_params)
@@ -87,6 +85,13 @@ class TasksController < ApplicationController
       if @task.user != current_user
         @task.user = current_user
 
+        if current_user.profile.score == nil
+          current_user.profile.score = @task.points
+        else
+          current_user.profile.score += @task.points
+        end
+        current_user.profile.save
+      else
         if current_user.profile.score == nil
           current_user.profile.score = @task.points
         else
