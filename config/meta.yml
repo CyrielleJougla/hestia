@@ -1,0 +1,5 @@
+meta_product_name: "Hestia"
+meta_title: "Hestia - Vous allez adorer vivre ensemble"
+meta_description: "Hestia est une application ludique qui aide au partage des tâches domestiques et à la motivation pour les faire !"
+#meta_image: "cover.png" # should exist in `app/assets/images/`
+#twitter_account: "@product_twitter_account"   # required for Twitter Cards
