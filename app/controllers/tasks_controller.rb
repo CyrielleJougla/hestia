@@ -65,6 +65,20 @@ class TasksController < ApplicationController
     redirect_to house_path(@task.house)
   end
 
+  def mark_as_done
+    @task = Task.find(params[:task_id])
+    status = params[:status] != "true"
+    puts status
+    @task.status = status
+    p @task
+    if @task.save
+      task_status
+      render json: {message: 'success', status: @task.status }.to_json
+    else
+      render json: {message: 'failure'}.to_json
+    end
+  end
+
   private
 
   def task_status

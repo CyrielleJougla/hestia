@@ -8,13 +8,21 @@
   <p> Non attribuée </p>
 <% end %>
 
-<%= link_to "Fait", task_path, method: :put %>
+<div class="checkbox-container">
+  <button id="mark_as_done" class="checkbox <%= @task.status ? 'class1' : 'class2' %>" data-task-id="<%= @task.id %>" data-status="<%= @task.status %>" >
+    <div class="checkbox-visual">
+      <div>
+      </div>
+    </div>
+  </button>
 
-  <div class="card-square">
-    <p> <%= "#{@task.description.capitalize}" %> </p>
+</div>
 
-    <%= image_tag "menage.png", style: "height:200px; width:200px;"%>
-  </div>
+<div class="card-square">
+  <p> <%= "#{@task.description.capitalize}" %> </p>
+
+  <%= image_tag "menage.png", style: "height:200px; width:200px;"%>
+</div>
 
 <div class="btn-edit-delete">
   <%= link_to "MODIFIER", edit_task_path(@task), class:"button-edit" %>

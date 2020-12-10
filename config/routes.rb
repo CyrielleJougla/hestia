@@ -15,5 +15,6 @@ Rails.application.routes.draw do
   resources :tasks, only: [:show, :edit, :update, :destroy]
   resources :profiles, only: [:show, :new, :create, :edit, :update]
   resources :habitants, only: [:new, :create]
-
+  get "mark_as_done", to: 'tasks#mark_as_done'
 end
+
