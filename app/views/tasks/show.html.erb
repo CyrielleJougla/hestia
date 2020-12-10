@@ -1,11 +1,11 @@
-<h1 class="title, parme"> <%= @task.name.capitalize %> </h1>
-<h2 class="second-tile, pink"> <%= " ★ #{@task.points} points ★" %> </h2>
+<h1 class="title"> <%= @task.name.capitalize %> </h1>
+<h2 class="blue-points"> <%= " ★ #{@task.points} points ★" %> </h2>
 
 
 <% if @task.user %>
-  <p> <%= "#{@task.user.profile.first_name.capitalize}" %> </p>
+  <p class="task-card task-card-text"> <%= "#{@task.user.profile.first_name.capitalize}" %> </p>
 <% else %>
-  <p> Non attribuée </p>
+  <p class="task-card task-card-text"> Non attribuée </p>
 <% end %>
 
 <div class="checkbox-container">
@@ -20,9 +20,8 @@
 
 <div class="card-square">
   <p> <%= "#{@task.description.capitalize}" %> </p>
-
-  <%= image_tag "menage.png", style: "height:200px; width:200px;"%>
-</div>
+    <%= image_tag "mains-ok.png", style: "height:200px; width:100px;"%>
+  </div>
 
 <div class="btn-edit-delete">
   <%= link_to "MODIFIER", edit_task_path(@task), class:"button-edit" %>
