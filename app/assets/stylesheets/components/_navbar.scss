@@ -4,6 +4,12 @@
 }
 
 .navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
+  flex-grow: 1;
 }
 
+.navbar-nav {
+  // padding-left: 0px;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
